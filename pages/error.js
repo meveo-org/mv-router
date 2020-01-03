@@ -25,6 +25,9 @@ export default class ErrorPage extends LitElement {
           This is the Error page. Click <a href="/">here</a> to return to home
           page.
         </p>
+        <p>
+          <h3>Error code: ${this.parameters.pathParameters.errorCode}</h3>
+        </p>
       </mv-container>
     `;
   }

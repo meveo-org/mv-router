@@ -35,15 +35,15 @@ export class MvRouterDemo extends LitElement {
         </mv-header>
         <mv-menu-panel menu showLabel slot="menu">
           <mv-menu-panel label>MvRouter</mv-menu-panel>
-          <mv-menu-panel item><a href="/">Home</a></mv-menu-panel>
+          <mv-menu-panel item><a href=".">Home</a></mv-menu-panel>
           <mv-menu-panel item>
-            <a href="/profile">Profile</a>
+            <a href="./profile">Profile</a>
           </mv-menu-panel>
           <mv-menu-panel item>
-            <a href="/help?articleId=123">Help</a>
+            <a href="./help?articleId=123">Help</a>
           </mv-menu-panel>
-          <mv-menu-panel item><a href="/about">About</a></mv-menu-panel>
-          <mv-menu-panel item><a href="/error">Error</a></mv-menu-panel>
+          <mv-menu-panel item><a href="./about">About</a></mv-menu-panel>
+          <mv-menu-panel item><a href="./error/404">Error</a></mv-menu-panel>
         </mv-menu-panel>
         <mv-router>
           <mv-router
@@ -59,7 +59,7 @@ export class MvRouterDemo extends LitElement {
             import="./pages/profile.js"
           ></mv-router>
           <mv-router route path="help" import="./pages/help.js"></mv-router>
-          <mv-router route path="error" import="./pages/error.js"></mv-router>
+          <mv-router route path="error/:errorCode" import="./pages/error.js"></mv-router>
         </mv-router>
         <mv-footer slot="footer">
           <mv-footer item>MvRouter Demo</mv-footer>

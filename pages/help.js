@@ -27,7 +27,7 @@ export default class HelpPage extends LitElement {
           page.
         </p>
         <p>
-          ArticleId: ${this.parameters.queryParameters.articleId}
+          <h3>ArticleId: ${this.parameters.queryParameters.articleId}</h3>
         </p>
       </mv-container>
     `;
