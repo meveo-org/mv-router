@@ -60,6 +60,7 @@ ${this.parameters.queryParameters.articleId}
 ${this.parameters.pathParameters.articleId}
 ```
 
+For a demo: [router.meveo.org](https://router.meveo.org)
 
 
 ## Acknowledgements
