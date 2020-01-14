@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit-element";
+import "router-slot";
 import "mv-main";
 import "mv-menu-panel";
 import "mv-header";
@@ -24,6 +25,9 @@ export class MvRouterDemo extends LitElement {
         --mv-container-max-width: 100%;
         --mv-container-margin: 20px auto;
       }
+      router-link {
+        outline: none;
+      }
     `;
   }
 
@@ -35,15 +39,11 @@ export class MvRouterDemo extends LitElement {
         </mv-header>
         <mv-menu-panel menu showLabel slot="menu">
           <mv-menu-panel label>MvRouter</mv-menu-panel>
-          <mv-menu-panel item><a href=".">Home</a></mv-menu-panel>
-          <mv-menu-panel item>
-            <a href="./profile">Profile</a>
-          </mv-menu-panel>
-          <mv-menu-panel item>
-            <a href="./help?articleId=123">Help</a>
-          </mv-menu-panel>
-          <mv-menu-panel item><a href="./about">About</a></mv-menu-panel>
-          <mv-menu-panel item><a href="./error/404">Error</a></mv-menu-panel>
+          <mv-menu-panel item><router-link path="./">Home</router-link></mv-menu-panel>
+          <mv-menu-panel item><router-link path="./profile">Profile</router-link></mv-menu-panel>
+          <mv-menu-panel item><router-link path="./help?articleId=123">Help</router-link></mv-menu-panel>
+          <mv-menu-panel item><router-link path="./about">About</router-link></mv-menu-panel>
+          <mv-menu-panel item><router-link path="./error/404">Error</router-link></mv-menu-panel>
         </mv-menu-panel>
         <mv-router>
           <mv-router
