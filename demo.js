@@ -50,16 +50,16 @@ export class MvRouterDemo extends LitElement {
             default
             route
             path="home"
-            import="./pages/home.js"
+            component="./pages/home.js"
           ></mv-router>
-          <mv-router route path="about" import="./pages/about.js"></mv-router>
+          <mv-router route path="about" component="./pages/about.js"></mv-router>
           <mv-router
             route
             path="profile"
-            import="./pages/profile.js"
+            component="./pages/profile.js"
           ></mv-router>
-          <mv-router route path="help" import="./pages/help.js"></mv-router>
-          <mv-router route path="error/:errorCode" import="./pages/error.js"></mv-router>
+          <mv-router route path="help" component="./pages/help.js"></mv-router>
+          <mv-router route path="error/:errorCode" component="./pages/error.js"></mv-router>
         </mv-router>
         <mv-footer slot="footer">
           <mv-footer item>MvRouter Demo</mv-footer>

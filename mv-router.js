@@ -7,7 +7,7 @@ export class MvRouter extends LitElement {
       route: { type: Boolean, attribute: true },
       default: { type: Boolean, attribute: true },
       path: { type: String, attribute: true },
-      import: { type: String, attribute: true }
+      component: { type: String, attribute: true }
     };
   }
 
@@ -32,7 +32,7 @@ export class MvRouter extends LitElement {
     super();
     this.route = false;
     this.default = false;
-    this.import = null;
+    this.component = null;
   }
 
   render() {
@@ -53,7 +53,7 @@ export class MvRouter extends LitElement {
         routes.push({
           path: route.path,
           preserveQuery: true,
-          component: () => import(route.import),
+          component: () => import(route.component),
           setup: (component, routeData) => {
             const match = routeData.match || {};
             const parameters = {
@@ -61,6 +61,15 @@ export class MvRouter extends LitElement {
               queryParameters: query()
             };
             component.parameters = parameters;
+            if (route.hasAttributes()) {
+              const attributes = route.attributes || [];
+              for (let index = attributes.length - 1; index >= 0; index--) {
+                const { name, value } = attributes[index];
+                if (!["route", "path", "default", "component"].includes(name)) {
+                  component.attributes[name] = value;
+                }
+              }
+            }
           }
         });
         if (route.default) {
