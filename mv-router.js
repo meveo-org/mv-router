@@ -70,6 +70,13 @@ export class MvRouter extends LitElement {
                 }
               }
             }
+            Object.getOwnPropertyNames(route)
+              .filter(
+                name => !["renderRoot"].includes(name) && !name.startsWith("_")
+              )
+              .forEach(name => {
+                component[name] = route[name];
+              });
           }
         });
         if (route.default) {
