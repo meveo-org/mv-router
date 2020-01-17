@@ -26,7 +26,10 @@ export class MvRouterDemo extends LitElement {
         --mv-container-margin: 20px auto;
       }
       router-link {
+        display: block;
         outline: none;
+        height: 100%;
+        width: 100%;
       }
     `;
   }
