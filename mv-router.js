@@ -66,7 +66,7 @@ export class MvRouter extends LitElement {
               for (let index = attributes.length - 1; index >= 0; index--) {
                 const { name, value } = attributes[index];
                 if (!["route", "path", "default", "component"].includes(name)) {
-                  component.attributes[name] = value;
+                  component.setAttribute(name, value);
                 }
               }
             }
