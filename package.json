@@ -1,0 +1,22 @@
+{
+  "name": "@meveo-org/mv-router",
+  "version": "1.0.0",
+  "description": "MvRouter is a Meveo menu component (based on lit-element) that allows browser routing for single page applications using [router-slot](https://github.com/andreasbm/router-slot)",
+  "main": "mv-router.js",
+  "scripts": {
+    "serve": "es-dev-server --node-resolve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meveo-org/mv-router.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meveo-org/mv-router/issues"
+  },
+  "homepage": "https://github.com/meveo-org/mv-router#readme",
+  "devDependencies": {
+    "es-dev-server": "^1.46.1"
+  }
+}
