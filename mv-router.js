@@ -7,7 +7,7 @@ export class MvRouter extends LitElement {
       route: { type: Boolean, attribute: true },
       default: { type: Boolean, attribute: true },
       path: { type: String, attribute: true },
-      component: { type: String, attribute: true }
+      component: { type: Object, attribute: true }
     };
   }
 
