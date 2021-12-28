@@ -53,7 +53,7 @@ export class MvRouter extends LitElement {
         routes.push({
           path: route.path,
           preserveQuery: true,
-          component: () => import(route.component),
+          component: () => typeof route.component === "string" ? import(route.component): route.component,
           setup: (component, routeData) => {
             const match = routeData.match || {};
             const parameters = {
