@@ -16,6 +16,10 @@
     "url": "https://github.com/meveo-org/mv-router/issues"
   },
   "homepage": "https://github.com/meveo-org/mv-router#readme",
+  "dependencies": {
+    "lit": "^2.0.2",
+    "router-slot": "^1.5.4"
+  },
   "devDependencies": {
     "es-dev-server": "^1.46.1"
   }

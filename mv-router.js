@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from "lit";
 import { query } from "router-slot";
 
 export class MvRouter extends LitElement {
@@ -70,6 +70,7 @@ export class MvRouter extends LitElement {
                 }
               }
             }
+            if (typeof route.component === "string") {
             Object.getOwnPropertyNames(route)
               .filter(
                 name => !["renderRoot"].includes(name) && !name.startsWith("_")
@@ -77,6 +78,7 @@ export class MvRouter extends LitElement {
               .forEach(name => {
                 component[name] = route[name];
               });
+            }
           }
         });
         if (route.default) {
