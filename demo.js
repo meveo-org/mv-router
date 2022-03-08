@@ -1,9 +1,9 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from "lit";
 import "router-slot";
-import "mv-main";
-import "mv-menu-panel";
-import "mv-header";
-import "mv-footer";
+import "@meveo-org/mv-main";
+import "@meveo-org/mv-menu-panel";
+import "@meveo-org/mv-header";
+import "@meveo-org/mv-footer";
 
 import "./mv-router.js";
 

@@ -11,19 +11,17 @@
   <title>mv-router</title>
   <link rel="icon" type="image/png" href="https://meveo.org/images/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/meveo-org/mv-theme@master/css/meveo-theme.css" />
-  <script defer
-    src="https://cdn.jsdelivr.net/gh/meveo-org/mv-dependencies@master/es-module-shims/es-module-shims.min.js"></script>
-  <script type="importmap-shim">
+  <script type="importmap">
     {
       "imports": {
-        "lit-element": "https://cdn.jsdelivr.net/gh/meveo-org/mv-dependencies@master/lit-element.js",
+        "lit": "https://cdn.jsdelivr.net/gh/meveo-org/mv-dependencies@master/lit-core-min-v2.2.0.js",
         "router-slot": "https://cdn.jsdelivr.net/gh/meveo-org/mv-dependencies@master/router-slot/index.js",
-        "mv-main": "https://cdn.jsdelivr.net/gh/meveo-org/mv-main@master/mv-main.js",
-        "mv-container": "https://cdn.jsdelivr.net/gh/meveo-org/mv-container@master/mv-container.js",
-        "mv-font-awesome": "https://cdn.jsdelivr.net/gh/meveo-org/mv-font-awesome@master/mv-font-awesome.js",
-        "mv-footer": "https://cdn.jsdelivr.net/gh/meveo-org/mv-footer@master/mv-footer.js",
-        "mv-header": "https://cdn.jsdelivr.net/gh/meveo-org/mv-header@master/mv-header.js",
-        "mv-menu-panel": "https://cdn.jsdelivr.net/gh/meveo-org/mv-menu-panel@master/mv-menu-panel.js"
+        "@meveo-org/mv-main": "https://cdn.jsdelivr.net/gh/meveo-org/mv-main@master/mv-main.js",
+        "@meveo-org/mv-container": "https://cdn.jsdelivr.net/gh/meveo-org/mv-container@master/mv-container.js",
+        "@meveo-org/mv-font-awesome": "https://cdn.jsdelivr.net/gh/meveo-org/mv-font-awesome@master/mv-font-awesome.js",
+        "@meveo-org/mv-footer": "https://cdn.jsdelivr.net/gh/meveo-org/mv-footer@master/mv-footer.js",
+        "@meveo-org/mv-header": "https://cdn.jsdelivr.net/gh/meveo-org/mv-header@master/mv-header.js",
+        "@meveo-org/mv-menu-panel": "https://cdn.jsdelivr.net/gh/meveo-org/mv-menu-panel@master/mv-menu-panel.js"
       }
     }
   </script>
@@ -52,7 +50,7 @@
     }
   </style>
 
-  <script type="module-shim" src="./demo.js"></script>
+  <script type="module" src="./demo.js"></script>
 </head>
 
 <body>
