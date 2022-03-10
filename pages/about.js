@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "lit-element";
-import "mv-container";
+import { LitElement, html, css } from "lit";
+import "@meveo-org/mv-container";
 
 export default class AboutPage extends LitElement {
   static get properties() {

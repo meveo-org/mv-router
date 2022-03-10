@@ -7,6 +7,12 @@ import "@meveo-org/mv-footer";
 
 import "./mv-router.js";
 
+import AboutPage from "./pages/about.js";
+import ErrorPage from "./pages/error.js";
+import HelpPage from "./pages/help.js";
+import HomePage from "./pages/home.js";
+import ProfilePage from "./pages/profile.js";
+
 export class MvRouterDemo extends LitElement {
   static get properties() {
     return {
@@ -49,20 +55,11 @@ export class MvRouterDemo extends LitElement {
           <mv-menu-panel item><router-link path="./error/404">Error</router-link></mv-menu-panel>
         </mv-menu-panel>
         <mv-router>
-          <mv-router
-            default
-            route
-            path="home"
-            component="./pages/home.js"
-          ></mv-router>
-          <mv-router route path="about" component="./pages/about.js"></mv-router>
-          <mv-router
-            route
-            path="profile"
-            component="./pages/profile.js"
-          ></mv-router>
-          <mv-router route path="help" component="./pages/help.js"></mv-router>
-          <mv-router route path="error/:errorCode" component="./pages/error.js"></mv-router>
+          <mv-router default route path="home" .componentClass="${HomePage}"></mv-router>
+          <mv-router route path="about" .componentClass="${AboutPage}"></mv-router>
+          <mv-router route path="profile" .componentClass="${ProfilePage}"></mv-router>
+          <mv-router route path="help" .componentClass="${HelpPage}"></mv-router>
+          <mv-router route path="error/:errorCode" .componentClass="${ErrorPage}"></mv-router>
         </mv-router>
         <mv-footer slot="footer">
           <mv-footer item>MvRouter Demo</mv-footer>
