@@ -8,7 +8,7 @@ export class MvRouter extends LitElement {
       default: { type: Boolean, attribute: true },
       path: { type: String, attribute: true },
       component: { type: String, attribute: true },
-      componentClass: { type: Object }
+      componentClass: { type: Object },
     };
   }
 
@@ -37,9 +37,7 @@ export class MvRouter extends LitElement {
 
   render() {
     if (!this.route) {
-      return html`
-        <router-slot></router-slot>
-      `;
+      return html` <router-slot></router-slot> `;
     }
   }
 
@@ -49,23 +47,23 @@ export class MvRouter extends LitElement {
       const routeElements = this.querySelectorAll("mv-router[route]");
       const routes = [];
       const defaultRoute = { path: "**", preserveQuery: true };
-      routeElements.forEach(route => {
+      routeElements.forEach((route) => {
         routes.push({
           path: route.path,
           preserveQuery: true,
-          component: async () => { 
+          component: async () => {
             if (route.componentClass) {
               return route.componentClass;
             } else {
-              const cmp = await import(route.component);
-              return cmp.default;
+              const { default: component } = await import(route.component);
+              return component;
             }
           },
           setup: (component, routeData) => {
             const match = routeData.match || {};
             const parameters = {
               pathParameters: match.params || {},
-              queryParameters: query()
+              queryParameters: query(),
             };
             component.parameters = parameters;
             if (route.hasAttributes()) {
@@ -78,15 +76,16 @@ export class MvRouter extends LitElement {
               }
             }
             if (typeof route.component === "string") {
-            Object.getOwnPropertyNames(route)
-              .filter(
-                name => !["renderRoot"].includes(name) && !name.startsWith("_")
-              )
-              .forEach(name => {
-                component[name] = route[name];
-              });
+              Object.getOwnPropertyNames(route)
+                .filter(
+                  (name) =>
+                    !["renderRoot"].includes(name) && !name.startsWith("_")
+                )
+                .forEach((name) => {
+                  component[name] = route[name];
+                });
             }
-          }
+          },
         });
         if (route.default) {
           defaultRoute.redirectTo = route.path;
