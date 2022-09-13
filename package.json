@@ -1,6 +1,6 @@
 {
   "name": "@meveo-org/mv-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MvRouter is a Meveo menu component (based on lit-element) that allows browser routing for single page applications using [router-slot](https://github.com/andreasbm/router-slot)",
   "main": "mv-router.js",
   "scripts": {

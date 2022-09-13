@@ -55,8 +55,7 @@ export class MvRouter extends LitElement {
             if (route.componentClass) {
               return route.componentClass;
             } else {
-              const { default: component } = await import(route.component);
-              return component;
+              console.error("Not implented");
             }
           },
           setup: (component, routeData) => {
